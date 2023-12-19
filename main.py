@@ -96,12 +96,12 @@ ResultSaver = PoseGraphResultSaver(init_pose=PGM.curr_se3,
 fig_idx = 1
 fig = plt.figure(fig_idx)
 writer = FFMpegWriter(fps=15)
-video_name = args.sequence_idx + ".mp4"
+video_name = "result/" + args.sequence_idx + ".mp4"
 num_frames_to_skip_to_show = 5
 num_frames_to_save = np.floor(num_points/num_frames_to_skip_to_show)
 # =========================================================================================================
 
-solid_database = np.empty((1, 100), dtype=int)
+solid_database = np.empty((1, args.num_range + args.num_angle), dtype=int)
 point_database = [None] * 100000
 
 with writer.saving(fig, video_name, num_frames_to_save): # this video saving part is optional
