@@ -87,6 +87,6 @@ class SOLiDModule:
         for shift_index in range(len(candidate)):
             initial_cosine_similarity = np.sum(np.abs(query - np.roll(candidate, shift_index)))
             initial_cosdist.append(initial_cosine_similarity)
-        angle_difference = (np.argmin(initial_cosdist)+1)*(360/self.num_angle)
+        angle_difference = 360-(np.argmin(initial_cosdist)+1)*(360/self.num_angle)
         return angle_difference
 

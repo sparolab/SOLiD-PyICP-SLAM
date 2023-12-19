@@ -48,7 +48,7 @@ parser.add_argument('--max_distance',   type = int,   default = '80',           
 parser.add_argument('--voxel_size',     type = float, default = '0.5',              help = 'channel')
 parser.add_argument('--point_dir',      type = str,   default = 'Datasets/bin/',    help = 'channel')
 parser.add_argument('--recent_node',    type = int,   default = '100',              help = 'channel')
-parser.add_argument('--loop_threshold', type = float, default = '0.005',            help = 'channel')
+parser.add_argument('--loop_threshold', type = float, default = '0.004',            help = 'channel')
 parser.add_argument('--save_gap',       type = int,   default = '300')
 parser.add_argument('--sequence_idx',   type = str,   default = '00')
 
