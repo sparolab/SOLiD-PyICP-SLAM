@@ -2,25 +2,26 @@
 * **SOLiD (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition) based Full Python based SLAM**
 
 ## Prerequisite
-* **![SOLiD](https://github.com/sparolab/SOLiD)(Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)**
-* **GTSAM**
+**![SOLiD](https://github.com/sparolab/SOLiD)(Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)**  
+
+**GTSAM**
 <pre>
 <code>
-pip3 install gtsam
+$ pip3 install gtsam
 </code>
 </pre>  
 
-* **OPEN3D**
+**OPEN3D**
 <pre>
 <code>
-pip3 install open3d
+$ pip3 install open3d
 </code>
 </pre>  
 
-* **FFMPEG**
+**FFMPEG**
 <pre>
 <code>
-sudo apt install ffmpeg
+$ sudo apt install ffmpeg
 </code>
 </pre>  
 
