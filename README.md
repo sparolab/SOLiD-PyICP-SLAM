@@ -4,15 +4,26 @@
 ## Prerequisite
 * **![SOLiD](https://github.com/sparolab/SOLiD)(Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)**
 * **GTSAM**
-'''
+<pre>
+<code>
 pip3 install gtsam
-'''
-* **OPEN#D**
+</code>
+</pre>  
+
+* **OPEN3D**
+<pre>
+<code>
 pip3 install open3d
+</code>
+</pre>  
+
 * **FFMPEG**
-'''
+<pre>
+<code>
 sudo apt install ffmpeg
-'''
+</code>
+</pre>  
+
 
 ## Results
 <img src="result/00.gif" width="200"/> <img src="result/02.gif" width="200"/> <img src="result/05.gif" width="200"/> <img src="result/08.gif" width="200"/>
