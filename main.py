@@ -79,7 +79,11 @@ SM = SOLiDModule(args.fov,
                  args.max_distance)
 # =========================================================================================================
 
-# SOLiD Module ============================================================================================
+# ICP Module ==============================================================================================
+IM = ICPModule()
+# =========================================================================================================
+
+# PGO Module ==============================================================================================
 PGM = PoseGraphModule()
 PGM.addPriorFactor()
 # =========================================================================================================
@@ -95,9 +99,9 @@ ResultSaver = PoseGraphResultSaver(init_pose=PGM.curr_se3,
 
 fig_idx = 1
 fig = plt.figure(fig_idx)
-writer = FFMpegWriter(fps=15)
+writer = FFMpegWriter(fps=30)
 video_name = "result/" + args.sequence_idx + ".mp4"
-num_frames_to_skip_to_show = 5
+num_frames_to_skip_to_show = 10
 num_frames_to_save = np.floor(num_points/num_frames_to_skip_to_show)
 # =========================================================================================================
 
@@ -127,14 +131,16 @@ with writer.saving(fig, video_name, num_frames_to_save): # this video saving par
 
         target = o3d.geometry.PointCloud()
         target.points = o3d.utility.Vector3dVector(prev_scan_pts)
+        target.estimate_normals()
 
         reg_p2p = o3d.pipelines.registration.registration_icp(source = source, 
-                                                            target = target, 
-                                                            max_correspondence_distance = 10, 
-                                                            init = icp_initial, 
-                                                            estimation_method = o3d.pipelines.registration.TransformationEstimationPointToPoint(), 
-                                                            criteria = o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=20))
+                                                              target = target, 
+                                                              max_correspondence_distance = 0.5, 
+                                                              init = icp_initial, 
+                                                              estimation_method = o3d.pipelines.registration.TransformationEstimationPointToPlane(), 
+                                                              criteria = o3d.pipelines.registration.ICPConvergenceCriteria(relative_fitness=0.001, max_iteration=20))
         odom_transform = reg_p2p.transformation 
+
         PGM.curr_se3 = np.matmul(PGM.curr_se3, odom_transform)
         icp_initial = odom_transform
         PGM.addOdometryFactor(odom_transform)
@@ -148,8 +154,8 @@ with writer.saving(fig, video_name, num_frames_to_save): # this video saving par
             cosdist = []
             
             for candidate_idx in range(PGM.curr_node_idx - args.recent_node):
-                query_R_solid     = solid_database[PGM.curr_node_idx, :40]
-                candidate_R_solid = solid_database[candidate_idx, :40]
+                query_R_solid     = solid_database[PGM.curr_node_idx, :args.num_range]
+                candidate_R_solid = solid_database[candidate_idx, :args.num_range]
                 cosine_similarity = SM.loop_detection(query_R_solid, candidate_R_solid)
                 cosdist.append(1-cosine_similarity)
 
@@ -157,21 +163,26 @@ with writer.saving(fig, video_name, num_frames_to_save): # this video saving par
             loop_distance = cosdist[loop_idx]
             
             if loop_distance < args.loop_threshold:
-                print(TerminalColors.BLUE + "Loop Detection: " + str(PGM.curr_node_idx) + " and " + str(loop_idx) + " with " + str(loop_distance) + TerminalColors.RESET) 
-                query_A_solid     = solid_database[PGM.curr_node_idx, 40:]
-                candidate_A_solid = solid_database[loop_idx, 40:]
+                print(TerminalColors.GREEN + "Loop Detection: " + str(PGM.curr_node_idx) + " and " + str(loop_idx) + " with " + str(loop_distance) + TerminalColors.RESET) 
+                query_A_solid     = solid_database[PGM.curr_node_idx, args.num_range:]
+                candidate_A_solid = solid_database[loop_idx, args.num_range:]
                 angle_difference  = SM.pose_estimation(query_A_solid, candidate_A_solid)
+                print(TerminalColors.BLUE + "Angle Difference: " + str(angle_difference) + TerminalColors.RESET) 
+
                 init_pose         = UM.yawdeg2se3(angle_difference)
                 loop_scan_pts = point_database[loop_idx]
                 loop = o3d.geometry.PointCloud()
                 loop.points = o3d.utility.Vector3dVector(loop_scan_pts)
+                loop.estimate_normals()
+
                 reg_p2p = o3d.pipelines.registration.registration_icp(source = source, 
                                                                       target = loop, 
-                                                                      max_correspondence_distance = 10, 
+                                                                      max_correspondence_distance = 0.5, 
                                                                       init = init_pose, 
-                                                                      estimation_method = o3d.pipelines.registration.TransformationEstimationPointToPoint(), 
-                                                                      criteria = o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=20))
+                                                                      estimation_method = o3d.pipelines.registration.TransformationEstimationPointToPlane(), 
+                                                                      criteria = o3d.pipelines.registration.ICPConvergenceCriteria(relative_fitness=0.001, max_iteration=20))
                 loop_transform = reg_p2p.transformation
+
                 PGM.addLoopFactor(loop_transform, loop_idx)
                 PGM.optimizePoseGraph()
                 ResultSaver.saveOptimizedPoseGraphResult(PGM.curr_node_idx, PGM.graph_optimized)

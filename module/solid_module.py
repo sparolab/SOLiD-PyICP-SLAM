@@ -53,13 +53,13 @@ class SOLiDModule:
         gap_angle = 360/self.num_angle              
         gap_elevation = (self.fov*2)/self.num_elevation                
 
-        rh_counter = np.zeros([self.num_range, self.num_elevation])               #sc 카운터 2차원 배열
-        sh_counter = np.zeros([self.num_angle, self.num_elevation])               #sc 카운터 2차원 배열
-        for pt_idx in range(num_points):        # 포인트 클라우드의 수만큼 반복
-            point = ptcloud[pt_idx, :]          # 해당 포인트의 x, y, z값을 가져옴
-            idx_range, idx_angle, idx_elevation = self.pt2rah(point, self.fov, gap_range, gap_angle, gap_elevation, self.num_range, self.num_angle, self.num_elevation) #극좌표계로 변환(링, 섹터)
-            rh_counter[idx_range, idx_elevation] = rh_counter[idx_range, idx_elevation] + 1     # 해당 빈의 카운트 +1
-            sh_counter[idx_angle, idx_elevation] = sh_counter[idx_angle, idx_elevation] + 1     # 해당 빈의 카운트 +1
+        rh_counter = np.zeros([self.num_range, self.num_elevation])               
+        sh_counter = np.zeros([self.num_angle, self.num_elevation])               
+        for pt_idx in range(num_points):        
+            point = ptcloud[pt_idx, :]          
+            idx_range, idx_angle, idx_elevation = self.pt2rah(point, self.fov, gap_range, gap_angle, gap_elevation, self.num_range, self.num_angle, self.num_elevation)
+            rh_counter[idx_range, idx_elevation] = rh_counter[idx_range, idx_elevation] + 1   
+            sh_counter[idx_angle, idx_elevation] = sh_counter[idx_angle, idx_elevation] + 1   
         
         range_matrix = rh_counter
         angle_matrix = sh_counter
@@ -84,9 +84,9 @@ class SOLiDModule:
 
     def pose_estimation(self, query, candidate):
         initial_cosdist = []
-        for shift_index in range(len(candidate)):
-            initial_cosine_similarity = np.sum(np.abs(query - np.roll(candidate, shift_index)))
+        for shift_index in range(len(query)):
+            initial_cosine_similarity = np.sum(np.abs(candidate - np.roll(query, shift_index)))
             initial_cosdist.append(initial_cosine_similarity)
-        angle_difference = 360-(np.argmin(initial_cosdist)+1)*(360/self.num_angle)
+        angle_difference = (np.argmin(initial_cosdist))*(360/self.num_angle)
         return angle_difference
 
