@@ -50,7 +50,7 @@ parser.add_argument('--point_dir',      type = str,   default = 'Datasets/bin/',
 parser.add_argument('--recent_node',    type = int,   default = '100',              help = 'channel')
 parser.add_argument('--loop_threshold', type = float, default = '0.004',            help = 'channel')
 parser.add_argument('--save_gap',       type = int,   default = '300')
-parser.add_argument('--sequence_idx',   type = str,   default = '00')
+parser.add_argument('--sequence_idx',   type = str,   default = '05')
 
 args = parser.parse_args()
 # =========================================================================================================
@@ -77,10 +77,6 @@ SM = SOLiDModule(args.fov,
                  args.num_range, 
                  args.num_elevation, 
                  args.max_distance)
-# =========================================================================================================
-
-# ICP Module ==============================================================================================
-IM = ICPModule()
 # =========================================================================================================
 
 # PGO Module ==============================================================================================
