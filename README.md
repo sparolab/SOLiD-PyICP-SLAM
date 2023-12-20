@@ -50,7 +50,7 @@ $ python3 main.py
 </pre>  
 
 ## Results
-In sequence 00, 02, 05 and 08.
+In sequence 00, 02, 05 and 08.  
 <img src="result/00.gif" width="200"/> <img src="result/02.gif" width="200"/> <img src="result/05.gif" width="200"/> <img src="result/08.gif" width="200"/>
 
 ## Special Thanks
