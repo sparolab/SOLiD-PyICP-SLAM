@@ -4,27 +4,26 @@
 
 ## Prerequisite
 * [SOLiD](https://github.com/sparolab/solid) (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)
+* GTSAM
+  <pre>
+  <code>
+  $ pip3 install gtsam
+  </code>
+  </pre>  
 
-**GTSAM**
-<pre>
-<code>
-$ pip3 install gtsam
-</code>
-</pre>  
+* OPEN3D
+  <pre>
+  <code>
+  $ pip3 install open3d
+  </code>
+  </pre>  
 
-**OPEN3D**
-<pre>
-<code>
-$ pip3 install open3d
-</code>
-</pre>  
-
-**FFMPEG**
-<pre>
-<code>
-$ sudo apt install ffmpeg
-</code>
-</pre>  
+* FFMPEG
+  <pre>
+  <code>
+  $ sudo apt install ffmpeg
+  </code>
+  </pre>  
 
 ## Run
 0. Download SOLiD-PyICP-SLAM.
