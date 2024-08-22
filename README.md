@@ -3,7 +3,7 @@
 * We estimate odometry using Point2Plane ICP in Open3D and optimize the pose graph using GTSAM.
 
 ## Prerequisite
-[SOLiD](https://github.com/sparolab/solid) (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)
+* [SOLiD](https://github.com/sparolab/solid) (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)
 
 **GTSAM**
 <pre>
