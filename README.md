@@ -9,20 +9,20 @@
   <br />
 
   <div style="display: flex; justify-content: center;">
-    <figure style="margin: 0 10px;">
-      <img src="result/00.gif" alt="animated" width="24%" />
+    <figure style="margin: 0 10px; text-align: center;">
+      <img src="result/00.gif" alt="animated" width="100%" />
       <figcaption>Caption for 00.gif</figcaption>
     </figure>
-    <figure style="margin: 0 10px;">
-      <img src="result/02.gif" alt="animated" width="24%" />
+    <figure style="margin: 0 10px; text-align: center;">
+      <img src="result/02.gif" alt="animated" width="100%" />
       <figcaption>Caption for 02.gif</figcaption>
     </figure>
-    <figure style="margin: 0 10px;">
-      <img src="result/05.gif" alt="animated" width="24%" />
+    <figure style="margin: 0 10px; text-align: center;">
+      <img src="result/05.gif" alt="animated" width="100%" />
       <figcaption>Caption for 05.gif</figcaption>
     </figure>
-    <figure style="margin: 0 10px;">
-      <img src="result/08.gif" alt="animated" width="24%" />
+    <figure style="margin: 0 10px; text-align: center;">
+      <img src="result/08.gif" alt="animated" width="100%" />
       <figcaption>Caption for 08.gif</figcaption>
     </figure>
   </div>
