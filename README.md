@@ -25,6 +25,7 @@
 * Cpp version will be revealed soon.
 	* (TBD) Integrated with A-LOAM: [SOLiD-A-LOAM](https://github.com/sparolab/SOLiD-A-LOAM.git)
 	* (TBD) Integrated with LOAM-LIVOX: [SOLiD-LOAM-LIVOX](https://github.com/sparolab/SOLiD-A-LOAM.git)
+* Scan Context fails in KITTI 08, which exists a lane-level reverse loop, but SOLiD detects this loop.
 
 ## Prerequisite
   * [SOLiD](https://github.com/sparolab/solid)
