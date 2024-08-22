@@ -7,6 +7,14 @@
   <a href="https://www.youtube.com/watch?v=4sAWWfZTwLs"><img src="https://badges.aleen42.com/src/youtube.svg" alt="YouTube" /></a>
   <br />
   <br />
+
+  <p align="center">
+    <img src="result/00.gif" alt="animated" width="24%" />
+    <img src="result/02.gif" alt="animated" width="24%" />
+    <img src="result/05.gif" alt="animated" width="24%" />
+    <img src="result/08.gif" alt="animated" width="24%" />
+  </p>
+
 </div>
 
 ## SOLiD
