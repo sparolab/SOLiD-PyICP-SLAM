@@ -8,7 +8,7 @@
   <br />
   <br />
 
-This repository is the SOLiD-based Full Python SLAM for Narrowing your FOV with **SOLiD**: Spatially Organized and Lightweight Global Descriptor for FOV-constrained LiDAR Place Recognition. The results below are in order of KITTI 00, 02, 05, and 08 sequences.
+This repository is the [SOLiD](https://github.com/sparolab/solid)-based Full Python SLAM for Narrowing your FOV with **SOLiD**: Spatially Organized and Lightweight Global Descriptor for FOV-constrained LiDAR Place Recognition. The results below are in order of KITTI 00, 02, 05, and 08 sequences.
 
 
   <p align="center">
