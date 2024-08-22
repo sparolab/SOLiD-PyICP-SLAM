@@ -17,23 +17,20 @@
 
 </div>
 
-## SOLiD
-* **SOLiD (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)** based Full Python based SLAM
+## SOLiD based Full Python based SLAM
+* **SOLiD (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)** is a lightweight and fast LiDAR global descriptor for FOV constraints situations that are limited through fusion with other sensors or blocked by robot/sensor operators including mechanical components or solid-state LiDAR (e.g. Livox).
 * We estimate odometry using Point2Plane ICP in Open3D and optimize the pose graph using GTSAM.
 * Purpose
   * This implementation is fully Python-based so slow but for educational purposes.
+* Cpp version will be revealed soon.
+	* (TBD) Integrated with A-LOAM: [SOLiD-A-LOAM](https://github.com/sparolab/SOLiD-A-LOAM.git)
+	* (TBD) Integrated with LOAM-LIVOX: [SOLiD-LOAM-LIVOX](https://github.com/sparolab/SOLiD-A-LOAM.git)
 
 ## Prerequisite
   * [SOLiD](https://github.com/sparolab/solid)
   * [GTSAM](https://pypi.org/project/gtsam/)
   * [OPEN3D](https://pypi.org/project/open3d/)
-  * FFMPEG
-    <pre>
-    <code>
-    $ sudo apt install ffmpeg
-    </code>
-    </pre>  
-
+  * [FFMPEG](https://phoenixnap.com/kb/install-ffmpeg-ubuntu)
 
 ## Run
 0. Download SOLiD-PyICP-SLAM.
