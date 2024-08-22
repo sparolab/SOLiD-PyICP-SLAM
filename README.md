@@ -7,6 +7,8 @@
   <a href="https://www.youtube.com/watch?v=4sAWWfZTwLs"><img src="https://badges.aleen42.com/src/youtube.svg" alt="YouTube" /></a>
   <br />
   <br />
+</div>
+
 * SOLiD (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition) based Full Python based SLAM
 * We estimate odometry using Point2Plane ICP in Open3D and optimize the pose graph using GTSAM.
 * Prerequisite
