@@ -1,29 +1,28 @@
 ## SOLiD-PyICP-SLAM
 * SOLiD (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition) based Full Python based SLAM
 * We estimate odometry using Point2Plane ICP in Open3D and optimize the pose graph using GTSAM.
+* Prerequisite
+  * [SOLiD](https://github.com/sparolab/solid) (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)
+  * GTSAM
+    <pre>
+    <code>
+    $ pip3 install gtsam
+    </code>
+    </pre>  
 
-## Prerequisite
-* [SOLiD](https://github.com/sparolab/solid) (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)
-* GTSAM
-  <pre>
-  <code>
-  $ pip3 install gtsam
-  </code>
-  </pre>  
+  * OPEN3D
+    <pre>
+    <code>
+    $ pip3 install open3d
+    </code>
+    </pre>  
 
-* OPEN3D
-  <pre>
-  <code>
-  $ pip3 install open3d
-  </code>
-  </pre>  
-
-* FFMPEG
-  <pre>
-  <code>
-  $ sudo apt install ffmpeg
-  </code>
-  </pre>  
+  * FFMPEG
+    <pre>
+    <code>
+    $ sudo apt install ffmpeg
+    </code>
+    </pre>  
 
 ## Run
 0. Download SOLiD-PyICP-SLAM.
