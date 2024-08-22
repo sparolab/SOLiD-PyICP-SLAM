@@ -24,7 +24,7 @@ This repository is the SOLiD-based Full Python SLAM for Narrowing your FOV with 
 * **SOLiD (Spatially Organized and Lightweight global Descriptor for LiDAR Place Recognition)** is a lightweight and fast LiDAR global descriptor for FOV constraints situations that are limited through fusion with other sensors or blocked by robot/sensor operators including mechanical components or solid-state LiDAR (e.g. Livox).
 * We estimate odometry using Point2Plane ICP in Open3D and optimize the pose graph using GTSAM.
 * Purpose
-  * This implementation is fully Python-based so slow but for educational purposes.
+  * This implementation is fully Python-based so slow and underperforming, but for educational purposes.
 * Cpp version will be revealed soon.
 	* (TBD) Integrated with A-LOAM: [SOLiD-A-LOAM](https://github.com/sparolab/SOLiD-A-LOAM.git)
 	* (TBD) Integrated with LOAM-LIVOX: [SOLiD-LOAM-LIVOX](https://github.com/sparolab/SOLiD-A-LOAM.git)
