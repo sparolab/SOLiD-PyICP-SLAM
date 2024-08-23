@@ -58,9 +58,6 @@ $ python3 main.py
 </code>
 </pre>  
 
-## Special Thanks
-Thank you [Giseop Kim](https://github.com/gisbi-kim/PyICP-SLAM) and [MyeongHwan Jeon](https://github.com/MyungHwanJeon/PyICP-SLAM) for providing the base code.
-
 ## Supplementary
 * [Arxiv](https://arxiv.org/abs/2408.07330#)
 * [Paper](https://ieeexplore.ieee.org/abstract/document/10629042)
@@ -76,7 +73,10 @@ Thank you [Giseop Kim](https://github.com/gisbi-kim/PyICP-SLAM) and [MyeongHwan 
 
 ## QnA
 * If you have a question, you utilize a [alphaXiv](https://www.alphaxiv.org/abs/2408.07330) and comment here.
-  
+
+## Special Thanks
+Thank you [Giseop Kim](https://github.com/gisbi-kim/PyICP-SLAM) and [MyeongHwan Jeon](https://github.com/MyungHwanJeon/PyICP-SLAM) for providing the base code.
+
 ## Citation
 <pre>
 <code>
