@@ -10,14 +10,6 @@
 
 This repository is the [SOLiD](https://github.com/sparolab/solid)-based Full Python SLAM for Narrowing your FOV with **SOLiD**: Spatially Organized and Lightweight Global Descriptor for FOV-constrained LiDAR Place Recognition. The results below are in order of KITTI 00, 02, 05, and 08 sequences.
 
-
-  <p align="center">
-    <img src="result/00.gif" alt="animated" width="24%" />
-    <img src="result/02.gif" alt="animated" width="24%" />
-    <img src="result/05.gif" alt="animated" width="24%" />
-    <img src="result/08.gif" alt="animated" width="24%" />
-  </p>
-
   <a href="https://scholar.google.com/citations?user=t5UEbooAAAAJ&hl=ko" target="_blank">Hogyun Kim</a><sup></sup>,
   <a href="https://scholar.google.com/citations?user=wL8VdUMAAAAJ&hl=ko" target="_blank">Jiwon Choi</a><sup></sup>,
   <a href="https://scholar.google.com/citations?user=UPg-JuQAAAAJ&hl=ko" target="_blank">Taehu Sim</a><sup></sup>,
@@ -25,6 +17,14 @@ This repository is the [SOLiD](https://github.com/sparolab/solid)-based Full Pyt
   <a href="https://scholar.google.com/citations?user=W5MOKWIAAAAJ&hl=ko" target="_blank">Younggun Cho</a><sup>†</sup>
 
 **[Spatial AI and Robotics Lab (SPARO)](https://sites.google.com/view/sparo/%ED%99%88?authuser=0&pli=1)**
+
+
+  <p align="center">
+    <img src="result/00.gif" alt="animated" width="24%" />
+    <img src="result/02.gif" alt="animated" width="24%" />
+    <img src="result/05.gif" alt="animated" width="24%" />
+    <img src="result/08.gif" alt="animated" width="24%" />
+  </p>
 
 </div>
 
